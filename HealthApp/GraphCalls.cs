@@ -85,36 +85,5 @@ namespace HealthApp
 
             return meeting.JoinWebUrl;
         }
-
-        public async static void SendEmail()
-        {
-            List<HeaderOption> requestHeaders = new List<HeaderOption>() { new HeaderOption("Authorization", "Bearer " + bearerToken) };
-
-            var message = new Message
-            {
-                Subject = "Meet for lunch?",
-                Body = new ItemBody
-                {
-                    ContentType = BodyType.Text,
-                    Content = "The new cafeteria is open."
-                },
-                ToRecipients = new List<Recipient>()
-                {
-                    new Recipient
-                    {
-                        EmailAddress = new EmailAddress
-                        {
-                            Address = "tarunchopra@outlook.com"
-                        }
-                    }
-                },
-            };
-
-            var saveToSentItems = false;
-            await graphClient.Me
-                .SendMail(message, saveToSentItems)
-                .Request(requestHeaders)
-                .PostAsync();
-        }
     }
 }
