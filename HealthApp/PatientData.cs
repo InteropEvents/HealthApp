@@ -1,6 +1,5 @@
 ﻿// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +19,8 @@ namespace HealthApp
         public DateTime DOB { get; set; }
         public string DoctorName { get; set; }
         public string AppointmentDateTime { get; set; }
-
         public string TeamsMeetingLink { get; set; }
+        public string DoctorEmailId { get; set; } = "fauci@taruntest.onmicrosoft.com";
 
     }
 
@@ -36,15 +35,15 @@ namespace HealthApp
             Patients.Add(new Patient()
             {
                 ID = 101,
-                Name = "Aaryaman Chopra",
+                Name = "John Smith",
                 DOB = new DateTime(1975, 2, 23),
                 DoctorName = "Dr. Fauci",
-                EmailId = "aaryamanchopra@gmail.com",
+                EmailId = "johnsmith@taruntest.onmicrosoft.com",
                 PhoneNo = "425000007",
-                BloodGrp="O+",
+                BloodGrp = "O+",
                 TeamsMeetingLink = "",
-                AppointmentDateTime = ""
-            });
+                AppointmentDateTime = "",
+            });;
             Patients.Add(new Patient()
             {
                 ID = 102,
