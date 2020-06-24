@@ -15,3 +15,8 @@ Add the following permissions:
 
 ## Overview
 After making above changes, copy Application (client) ID and Directory (tenant) ID and paste in App.xaml.cs
+
+![Optional Text](https://github.com/InteropEvents/HealthApp/blob/Teledoc/HealthApp/Images/Overview.PNG)
+
+
+
