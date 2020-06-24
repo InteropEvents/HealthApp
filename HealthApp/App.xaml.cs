@@ -30,20 +30,23 @@ namespace HealthApp
 
         }
 
+        private static string Instance = "https://login.microsoftonline.com/";
+
         // Below are the clientId (Application Id) of your app registration and the tenant information. 
         // You have to replace:
-        // - the content of ClientID with the Application Id for your app registration
-        // - The content of Tenant by the information about the accounts allowed to sign-in in your application:
-        //   - For Work or School account in your org, use your tenant ID, or domain
-        //   - for any Work or School accounts, use organizations
-        //   - for any Work or School accounts, or Microsoft personal account, use e6809ec0-9410-43bc-86c1-f6ead95d6d2a
-        //   - for Microsoft Personal account, use consumers
+        // The content of ClientID with the Application Id for your app registration
         private static string ClientId = "";
+        // The content of Tenant where your above application is registered.
         private static string Tenant = "";
+
+        // (Optional) - Fields used to send meeting invites.
+        // SMTP host address which will be used to send meeting invite to Patient and Doctor
         public static string SMTPEmailHost = "smtp.office365.com";
+        // Email address of the SMTP account which will be used to send the invite
         public static string SMTPEmail = "";
+        // Password of the above SMTP account 
         public static string SMTPPassword = "";
-        private static string Instance = "https://login.microsoftonline.com/";
+
         private static IPublicClientApplication _clientApp;
 
         public static IPublicClientApplication PublicClientApp { get { return _clientApp; } }

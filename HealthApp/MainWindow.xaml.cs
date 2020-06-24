@@ -162,9 +162,6 @@ namespace HealthApp
                 // Getting Time from UI
                 appointmentStartTime = TeamsMeetingPopup_StartTime.Text;
                 appointmentEndTime = TeamsMeetingPopup_EndTime.Text;
-                //TeamsMeetingPopup_EndTime.Text;
-                // End Date is always equal to Start Date.
-                // End time is always 1hr increment of Start Time.
 
                 // Updating appointment date time in Patient List
                 Patient.AppointmentDateTime = appointmentStartDate + " " + appointmentStartTime;

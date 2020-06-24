@@ -193,5 +193,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ApiPermission.PNG" />
+    <Resource Include="Authentication.PNG" />
+    <Resource Include="Overview.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Authentication.PNG" />
+    <Resource Include="Images\Overview.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

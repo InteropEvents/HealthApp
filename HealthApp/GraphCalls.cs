@@ -31,8 +31,6 @@ namespace HealthApp
             }
             catch (MsalUiRequiredException ex)
             {
-                // A MsalUiRequiredException happened on AcquireTokenSilent. 
-                // This indicates you need to call AcquireTokenInteractive to acquire a token
                 System.Diagnostics.Debug.WriteLine($"MsalUiRequiredException: {ex.Message}");
 
                 try
@@ -45,24 +43,17 @@ namespace HealthApp
                 }
                 catch (MsalException)
                 {
-                    //ResultText.Text = $"Error Acquiring Token:{System.Environment.NewLine}{msalex}";
                 }
             }
             catch (Exception)
             {
-                //ResultText.Text = $"Error Acquiring Token Silently:{System.Environment.NewLine}{ex}";
                 return;
             }
 
             if (authResult != null)
             {
-                // ResultText.Text = await GetHttpContentWithToken(graphAPIEndpoint, authResult.AccessToken);
-                // DisplayBasicTokenInfo(authResult);
-
                 graphClient = new GraphServiceClient(authenticationProvider: null);
                 bearerToken = authResult.AccessToken;
-
-                // this.SignOutButton.Visibility = Visibility.Visible;
             }
         }
 
@@ -72,8 +63,6 @@ namespace HealthApp
 
             var onlineMeeting = new OnlineMeeting
             {
-                //StartDateTime = DateTimeOffset.Parse("2020-05-28T21:30:34.2444915+00:00"),
-                //EndDateTime = DateTimeOffset.Parse("2020-07-17T21:30:34.2464912+00:00"),
                 StartDateTime = startDateTime,
                 EndDateTime = endDateTime,
                 Subject = "Upcoming Health Appointment Notification"
